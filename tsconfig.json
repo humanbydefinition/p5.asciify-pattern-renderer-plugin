@@ -22,6 +22,7 @@
     "allowSyntheticDefaultImports": true,
 
     "strict": true,
+    "noImplicitAny": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
 
@@ -29,5 +30,5 @@
       "vite-plugin-glsl/ext"
     ]
   },
-  "include": ["src/plugin", "src/declarations.d.ts"]
+  "include": ["src"]
 }

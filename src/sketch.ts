@@ -2,12 +2,22 @@ import p5 from 'p5';
 import { p5asciify } from 'p5.asciify';
 
 import { PatternRendererPlugin } from './plugin/PatternRendererPlugin';
+import { P5AsciifyPatternRenderer } from './plugin/renderer/PatternAsciiRenderer';
+import { P5AsciifyBrightnessRenderer } from 'p5.asciify/dist/types/renderers/2d/feature';
+import { renderers } from 'p5.asciify';
 
 const sketch = new p5((p) => {
 
+<<<<<<< HEAD:src/sketch.js
     let asciifier;
 
     let patternRenderer;
+=======
+    let brightnessRenderer: renderers.renderer2d.feature.P5AsciifyBrightnessRenderer;
+    let patternRenderer: P5AsciifyPatternRenderer;
+
+    let linearPattern;
+>>>>>>> 7e65950811656edcaf346282f79f74110b10e362:src/sketch.ts
 
     let linearGradient, spiralGradient, radialGradient,
         zigzagGradient, conicalGradient;
@@ -32,16 +42,26 @@ const sketch = new p5((p) => {
 
     p.setupAsciify = () => {
 
+<<<<<<< HEAD:src/sketch.js
         asciifier = p5asciify.asciifier();
         asciifier.backgroundMode("sampled");
 
         asciifier.renderers().get("brightness").update({
             enabled: true,
+=======
+        brightnessRenderer = p5asciify.asciifier().renderers().get("brightness") as P5AsciifyBrightnessRenderer;
+        brightnessRenderer.update({
+            enabled: false,
+>>>>>>> 7e65950811656edcaf346282f79f74110b10e362:src/sketch.ts
             brightnessRange: [0, 255],
             characters: ".",
         });
 
+<<<<<<< HEAD:src/sketch.js
         patternRenderer = asciifier.renderers().add("pattern", "pattern", { enabled: true });
+=======
+        patternRenderer = p5asciify.asciifier().renderers().add("pattern", "pattern", { enabled: true }) as P5AsciifyPatternRenderer;
+>>>>>>> 7e65950811656edcaf346282f79f74110b10e362:src/sketch.ts
 
         linearGradient = patternRenderer.add("linear", 150, 150, "patterns ", {
             direction: 1,
