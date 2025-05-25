@@ -1,3 +1,3 @@
-# p5.asciify renderer plugin template
+# p5.asciify pattern renderer plugin
 
 work in progress
