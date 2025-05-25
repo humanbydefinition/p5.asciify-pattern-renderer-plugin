@@ -2,13 +2,6 @@ import p5 from 'p5';
 import { P5AsciifyGrid, P5AsciifyFontManager, renderers, plugins } from 'p5.asciify';
 import { P5AsciifyPatternRenderer, GRADIENT_DEFAULT_OPTIONS } from './renderer/PatternAsciiRenderer';
 
-// Declare Window interface augmentation right here
-declare global {
-  interface Window {
-    PatternRendererPlugin: plugins.P5AsciifyRendererPlugin;
-  }
-}
-
 /**
  * `p5.asciify` plugin that provides an accurate ASCII renderer.
  * This renderer attempts to pick the most fitting ASCII representation
