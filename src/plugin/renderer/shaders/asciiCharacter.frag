@@ -16,5 +16,5 @@ void main() {
     // Direct equality comparison between gradients
     bool colorsMatch = prevGradient == nextGradient;
     
-    gl_FragColor = colorsMatch ? prevAscii : nextGradient;
+    gl_FragColor = colorsMatch ? vec4(0.0) : nextGradient;
 }
