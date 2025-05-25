@@ -1,6 +1,6 @@
 {
     "entryPoints": [
-        "src/plugin/index.ts",
+        "src/index.ts",
     ],
     "out": "docs",
     "name": "p5.asciify-pattern-renderer-plugin",

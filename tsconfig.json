@@ -16,7 +16,7 @@
     "declarationDir": "dist/types",
     
     "outDir": "dist",            
-    "rootDir": "src/plugin",
+    "rootDir": "src",
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -30,5 +30,5 @@
       "vite-plugin-glsl/ext"
     ]
   },
-  "include": ["src/plugin", "src/declarations.d.ts"]
+  "include": ["src"],
 }
