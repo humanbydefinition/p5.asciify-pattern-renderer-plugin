@@ -5,7 +5,7 @@ export default defineConfig({
     build: {
         minify: true,
         lib: {
-            entry: ['src/plugin/PatternRendererPlugin.ts'],
+            entry: ['src/plugin/index.ts'],
             name: 'p5.asciify-plugin-template',
             fileName: (format) => `p5.asciify-pattern-renderer-plugin.${format === 'es' ? 'esm' : format}.js`,
             formats: ['es', 'umd']
