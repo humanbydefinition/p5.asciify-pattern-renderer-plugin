@@ -9,7 +9,7 @@ import colorSampleShader from './shaders/colorSample.frag';
 import inversionShader from './shaders/inversion.frag';
 import rotationShader from './shaders/rotation.frag';
 import asciiCharacterShader from './shaders/asciiCharacter.frag';
-import vertexShader from './shaders/shader.vert?raw';
+import vertexShader from './shaders/shader.vert';
 import { P5AsciifyFontManager } from 'p5.asciify';
 import { P5AsciifyGradient } from './gradients/Gradient';
 import { GradientType } from './gradients/types';
@@ -148,7 +148,7 @@ export class P5AsciifyPatternRenderer extends getBaseClass() {
 
         // Gradient passes
         for (const gradient of this.gradientManager.gradients) {
-            if (gradient.isEnabled) {
+            if (gradient.isEnabled()) {
                 [this.prevAsciiGradientFramebuffer, this.nextAsciiGradientFramebuffer] = [this.nextAsciiGradientFramebuffer, this.prevAsciiGradientFramebuffer];
 
                 this.nextAsciiGradientFramebuffer.begin();
