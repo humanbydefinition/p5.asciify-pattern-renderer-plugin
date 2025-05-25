@@ -1,12 +1,12 @@
-[**p5.asciify-pattern-renderer-plugin v1.0.0**](../README.md)
+[**p5.asciify-pattern-renderer-plugin v1.0.0**](../../../../README.md)
 
 ***
 
-[p5.asciify-pattern-renderer-plugin](../README.md) / P5AsciifyGradientManager
+[p5.asciify-pattern-renderer-plugin](../../../../README.md) / [patterns](../README.md) / P5AsciifyGradientManager
 
 # Class: P5AsciifyGradientManager
 
-Defined in: [renderer/gradients/GradientManager.ts:20](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/GradientManager.ts#L20)
+Defined in: renderer/patterns/PatternManager.ts:20
 
 Manages the creation and removal of gradients for the gradient ascii renderer.
 
@@ -14,9 +14,9 @@ Manages the creation and removal of gradients for the gradient ascii renderer.
 
 ### Constructor
 
-> **new P5AsciifyGradientManager**(`_p`, `_fontManager`): `P5AsciifyGradientManager`
+> **new P5AsciifyGradientManager**(`_p`, `_fontManager`): `P5AsciifyPatternManager`
 
-Defined in: [renderer/gradients/GradientManager.ts:56](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/GradientManager.ts#L56)
+Defined in: renderer/patterns/PatternManager.ts:56
 
 #### Parameters
 
@@ -27,7 +27,7 @@ Defined in: [renderer/gradients/GradientManager.ts:56](https://github.com/humanb
 
 #### Returns
 
-`P5AsciifyGradientManager`
+`P5AsciifyPatternManager`
 
 ## Accessors
 
@@ -37,7 +37,7 @@ Defined in: [renderer/gradients/GradientManager.ts:56](https://github.com/humanb
 
 > **get** **gradientConstructors**(): [`GradientConstructorMap`](../type-aliases/GradientConstructorMap.md)
 
-Defined in: [renderer/gradients/GradientManager.ts:158](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/GradientManager.ts#L158)
+Defined in: renderer/patterns/PatternManager.ts:158
 
 ##### Returns
 
@@ -51,7 +51,7 @@ Defined in: [renderer/gradients/GradientManager.ts:158](https://github.com/human
 
 > **get** **gradientParams**(): [`GradientParams`](../type-aliases/GradientParams.md)
 
-Defined in: [renderer/gradients/GradientManager.ts:156](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/GradientManager.ts#L156)
+Defined in: renderer/patterns/PatternManager.ts:156
 
 ##### Returns
 
@@ -65,7 +65,7 @@ Defined in: [renderer/gradients/GradientManager.ts:156](https://github.com/human
 
 > **get** **gradients**(): [`P5AsciifyGradient`](P5AsciifyGradient.md)[]
 
-Defined in: [renderer/gradients/GradientManager.ts:157](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/GradientManager.ts#L157)
+Defined in: renderer/patterns/PatternManager.ts:157
 
 ##### Returns
 
@@ -77,7 +77,7 @@ Defined in: [renderer/gradients/GradientManager.ts:157](https://github.com/human
 
 > **add**(`gradientName`, `characters`, `brightnessStart`, `brightnessEnd`, `options`): [`P5AsciifyGradient`](P5AsciifyGradient.md)
 
-Defined in: [renderer/gradients/GradientManager.ts:79](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/GradientManager.ts#L79)
+Defined in: renderer/patterns/PatternManager.ts:79
 
 Add a gradient to the gradient manager.
 
@@ -103,7 +103,7 @@ The gradient instance.
 
 > **remove**(`gradient`): `void`
 
-Defined in: [renderer/gradients/GradientManager.ts:148](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/GradientManager.ts#L148)
+Defined in: renderer/patterns/PatternManager.ts:148
 
 Remove a gradient from the gradient manager.
 

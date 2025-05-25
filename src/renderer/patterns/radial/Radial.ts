@@ -1,12 +1,12 @@
 import p5 from 'p5';
-import { P5AsciifyGradient } from '../Gradient';
+import { P5AsciifyPattern } from '../Pattern';
 import { P5AsciifyFontManager } from 'p5.asciify';
 import { RadialGradientParams } from '../types';
 
 /**
  * A radial gradient that moves in a radial pattern across the screen.
  */
-export class P5AsciifyRadialGradient extends P5AsciifyGradient {
+export class P5AsciifyRadialPattern extends P5AsciifyPattern {
     public direction: number;
     public centerX: number;
     public centerY: number;

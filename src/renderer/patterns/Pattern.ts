@@ -4,7 +4,7 @@ import { P5AsciifyColorPalette, P5AsciifyFontManager, P5AsciifyError } from 'p5.
 /**
  * Represents a gradient that can be applied to the gradient ascii renderer.
  */
-export abstract class P5AsciifyGradient {
+export abstract class P5AsciifyPattern {
 
     /** The start brightness value of the gradient. Should be a value between 0 and 255. */
     protected _brightnessStart: number;

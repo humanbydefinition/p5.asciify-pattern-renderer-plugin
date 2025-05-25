@@ -1,16 +1,16 @@
 import p5 from 'p5';
-import { p5asciify, renderers } from 'p5.asciify';
+import { p5asciify, renderers, P5Asciifier } from 'p5.asciify';
 
 import { PatternRendererPlugin } from '../src/PatternRendererPlugin';
-import { P5AsciifyConicalGradient, P5AsciifyLinearGradient, P5AsciifyRadialGradient, P5AsciifySpiralGradient } from '../src/renderer/gradients';
+import { P5AsciifyConicalGradient, P5AsciifyLinearGradient, P5AsciifyRadialGradient, P5AsciifySpiralGradient } from '../src/renderer/patterns';
 import { P5AsciifyPatternRenderer } from '../src/renderer/PatternAsciiRenderer';
 
-const sketch = new p5((p) => {
+const sketch = new p5((p: p5) => {
 
-    let asciifier;
+    let asciifier: P5Asciifier;
 
-    let brightnessRenderer;
-    let patternRenderer;
+    let brightnessRenderer: renderers.renderer2d.feature.P5AsciifyBrightnessRenderer;
+    let patternRenderer: P5AsciifyPatternRenderer;
 
     let linearGradient: P5AsciifyLinearGradient;
     let spiralGradient: P5AsciifySpiralGradient;

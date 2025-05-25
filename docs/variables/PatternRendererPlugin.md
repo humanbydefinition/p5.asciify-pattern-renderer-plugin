@@ -8,7 +8,7 @@
 
 > `const` **PatternRendererPlugin**: `plugins.P5AsciifyRendererPlugin`
 
-Defined in: [PatternRendererPlugin.ts:10](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/PatternRendererPlugin.ts#L10)
+Defined in: [PatternRendererPlugin.ts:10](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/2499c73bf259b983f942051e0406f35b76f1e6cd/src/PatternRendererPlugin.ts#L10)
 
 `p5.asciify` plugin that provides an accurate ASCII renderer.
 This renderer attempts to pick the most fitting ASCII representation

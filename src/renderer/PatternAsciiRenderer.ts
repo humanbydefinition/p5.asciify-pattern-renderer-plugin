@@ -2,7 +2,7 @@ import p5 from 'p5';
 
 import { P5AsciifyGrid } from 'p5.asciify';
 import { renderers } from 'p5.asciify';
-import { P5AsciifyGradientManager } from './gradients/GradientManager';
+import { P5AsciifyPatternManager } from './patterns/PatternManager';
 
 import grayscaleShader from './shaders/grayscale.frag';
 import colorSampleShader from './shaders/colorSample.frag';
@@ -11,8 +11,8 @@ import rotationShader from './shaders/rotation.frag';
 import asciiCharacterShader from './shaders/asciiCharacter.frag';
 import vertexShader from './shaders/shader.vert';
 import { P5AsciifyFontManager } from 'p5.asciify';
-import { P5AsciifyGradient } from './gradients/Gradient';
-import { GradientType } from './gradients/types';
+import { P5AsciifyPattern } from './patterns/Pattern';
+import { GradientType } from './patterns/types';
 
 /** Default configuration options for `"gradient"` ASCII renderer */
 export const GRADIENT_DEFAULT_OPTIONS = {
@@ -60,7 +60,7 @@ export class P5AsciifyPatternRenderer extends getBaseClass() {
     private asciiCharacterShader: p5.Shader;
     private prevAsciiGradientFramebuffer: p5.Framebuffer;
     private nextAsciiGradientFramebuffer: p5.Framebuffer;
-    private gradientManager: P5AsciifyGradientManager;
+    private gradientManager: P5AsciifyPatternManager;
 
     constructor(
         p5Instance: p5,
@@ -72,7 +72,7 @@ export class P5AsciifyPatternRenderer extends getBaseClass() {
         const mergedOptions = { ...GRADIENT_DEFAULT_OPTIONS, ...options };
         super(p5Instance, captureFramebuffer, grid, fontManager, mergedOptions);
 
-        this.gradientManager = new P5AsciifyGradientManager(this._p, this._fontManager);
+        this.gradientManager = new P5AsciifyPatternManager(this._p, this._fontManager);
 
         this.grayscaleShader = this._p.createShader(vertexShader, grayscaleShader);
         this.colorSampleShader = this._p.createShader(vertexShader, colorSampleShader);
@@ -118,11 +118,11 @@ export class P5AsciifyPatternRenderer extends getBaseClass() {
         brightnessStart: number,
         brightnessEnd: number,
         characters: string,
-        options: any = {}): P5AsciifyGradient {
+        options: any = {}): P5AsciifyPattern {
         return this.gradientManager.add(gradientName, characters, brightnessStart, brightnessEnd, options);
     }
 
-    remove(gradientInstance: P5AsciifyGradient): void {
+    remove(gradientInstance: P5AsciifyPattern): void {
         this.gradientManager.remove(gradientInstance);
     }
 

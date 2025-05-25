@@ -6,7 +6,7 @@
 
 # Class: P5AsciifyPatternRenderer
 
-Defined in: [renderer/PatternAsciiRenderer.ts:54](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/PatternAsciiRenderer.ts#L54)
+Defined in: [renderer/PatternAsciiRenderer.ts:54](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/2499c73bf259b983f942051e0406f35b76f1e6cd/src/renderer/PatternAsciiRenderer.ts#L54)
 
 An ASCII renderer that applies all defined ASCII gradients/patterns to the input framebuffer.
 
@@ -20,7 +20,7 @@ An ASCII renderer that applies all defined ASCII gradients/patterns to the input
 
 > **new P5AsciifyPatternRenderer**(`p5Instance`, `captureFramebuffer`, `grid`, `fontManager`, `options`): `P5AsciifyPatternRenderer`
 
-Defined in: [renderer/PatternAsciiRenderer.ts:65](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/PatternAsciiRenderer.ts#L65)
+Defined in: [renderer/PatternAsciiRenderer.ts:65](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/2499c73bf259b983f942051e0406f35b76f1e6cd/src/renderer/PatternAsciiRenderer.ts#L65)
 
 #### Parameters
 
@@ -44,15 +44,15 @@ Defined in: [renderer/PatternAsciiRenderer.ts:65](https://github.com/humanbydefi
 
 ### add()
 
-> **add**(`gradientName`, `brightnessStart`, `brightnessEnd`, `characters`, `options`): [`P5AsciifyGradient`](P5AsciifyGradient.md)
+> **add**(`gradientName`, `brightnessStart`, `brightnessEnd`, `characters`, `options`): [`P5AsciifyGradient`](../p5.asciify-pattern-renderer-plugin/namespaces/patterns/classes/P5AsciifyGradient.md)
 
-Defined in: [renderer/PatternAsciiRenderer.ts:117](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/PatternAsciiRenderer.ts#L117)
+Defined in: [renderer/PatternAsciiRenderer.ts:117](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/2499c73bf259b983f942051e0406f35b76f1e6cd/src/renderer/PatternAsciiRenderer.ts#L117)
 
 #### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `gradientName` | [`GradientType`](../type-aliases/GradientType.md) |
+| `gradientName` | [`GradientType`](../p5.asciify-pattern-renderer-plugin/namespaces/patterns/type-aliases/GradientType.md) |
 | `brightnessStart` | `number` |
 | `brightnessEnd` | `number` |
 | `characters` | `string` |
@@ -60,7 +60,7 @@ Defined in: [renderer/PatternAsciiRenderer.ts:117](https://github.com/humanbydef
 
 #### Returns
 
-[`P5AsciifyGradient`](P5AsciifyGradient.md)
+[`P5AsciifyGradient`](../p5.asciify-pattern-renderer-plugin/namespaces/patterns/classes/P5AsciifyGradient.md)
 
 ***
 
@@ -68,13 +68,13 @@ Defined in: [renderer/PatternAsciiRenderer.ts:117](https://github.com/humanbydef
 
 > **remove**(`gradientInstance`): `void`
 
-Defined in: [renderer/PatternAsciiRenderer.ts:125](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/PatternAsciiRenderer.ts#L125)
+Defined in: [renderer/PatternAsciiRenderer.ts:125](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/2499c73bf259b983f942051e0406f35b76f1e6cd/src/renderer/PatternAsciiRenderer.ts#L125)
 
 #### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `gradientInstance` | [`P5AsciifyGradient`](P5AsciifyGradient.md) |
+| `gradientInstance` | [`P5AsciifyGradient`](../p5.asciify-pattern-renderer-plugin/namespaces/patterns/classes/P5AsciifyGradient.md) |
 
 #### Returns
 

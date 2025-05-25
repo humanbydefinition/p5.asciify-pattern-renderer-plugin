@@ -1,15 +1,17 @@
 import p5 from 'p5';
+import { P5AsciifyPattern } from '../Pattern';
 import { P5AsciifyFontManager } from 'p5.asciify';
-import { P5AsciifyGradient } from '../Gradient';
-import { ConicalGradientParams } from '../types';
+import { SpiralGradientParams } from '../types';
 
 /**
- * A conical gradient that moves in a conical pattern across the screen.
+ * A spiral gradient that moves in a spiral pattern across the screen.
  */
-export class P5AsciifyConicalGradient extends P5AsciifyGradient {
+export class P5AsciifySpiralPattern extends P5AsciifyPattern {
+    public direction: number;
     public centerX: number;
     public centerY: number;
     public speed: number;
+    public density: number;
 
     constructor(
         protected p: p5,
@@ -18,12 +20,14 @@ export class P5AsciifyConicalGradient extends P5AsciifyGradient {
         protected _characters: string,
         brightnessStart: number,
         brightnessEnd: number,
-        params: ConicalGradientParams
+        params: SpiralGradientParams
     ) {
-        super(p, _fontManager, _shader, _characters, brightnessStart, brightnessEnd, );
+        super(p, _fontManager, _shader, _characters, brightnessStart, brightnessEnd,);
+        this.direction = params.direction;
         this.centerX = params.centerX;
         this.centerY = params.centerY;
         this.speed = params.speed;
+        this.density = params.density;
     }
 
     setUniforms(
@@ -31,8 +35,10 @@ export class P5AsciifyConicalGradient extends P5AsciifyGradient {
         referenceFramebuffer: p5.Framebuffer
     ): void {
         super.setUniforms(framebuffer, referenceFramebuffer);
+        this._shader.setUniform('u_gradientDirection', this.direction);
         this._shader.setUniform('u_centerX', this.centerX);
         this._shader.setUniform('u_centerY', this.centerY);
         this._shader.setUniform('u_speed', this.speed);
+        this._shader.setUniform('u_density', this.density);
     }
 }

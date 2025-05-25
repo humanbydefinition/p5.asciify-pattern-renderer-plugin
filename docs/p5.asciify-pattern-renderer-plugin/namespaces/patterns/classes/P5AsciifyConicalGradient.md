@@ -1,12 +1,12 @@
-[**p5.asciify-pattern-renderer-plugin v1.0.0**](../README.md)
+[**p5.asciify-pattern-renderer-plugin v1.0.0**](../../../../README.md)
 
 ***
 
-[p5.asciify-pattern-renderer-plugin](../README.md) / P5AsciifyConicalGradient
+[p5.asciify-pattern-renderer-plugin](../../../../README.md) / [patterns](../README.md) / P5AsciifyConicalGradient
 
 # Class: P5AsciifyConicalGradient
 
-Defined in: [renderer/gradients/conical/Conical.ts:9](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/conical/Conical.ts#L9)
+Defined in: renderer/patterns/conical/Conical.ts:9
 
 A conical gradient that moves in a conical pattern across the screen.
 
@@ -18,9 +18,9 @@ A conical gradient that moves in a conical pattern across the screen.
 
 ### Constructor
 
-> **new P5AsciifyConicalGradient**(`p`, `_fontManager`, `_shader`, `_characters`, `brightnessStart`, `brightnessEnd`, `params`): `P5AsciifyConicalGradient`
+> **new P5AsciifyConicalGradient**(`p`, `_fontManager`, `_shader`, `_characters`, `brightnessStart`, `brightnessEnd`, `params`): `P5AsciifyConicalPattern`
 
-Defined in: [renderer/gradients/conical/Conical.ts:14](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/conical/Conical.ts#L14)
+Defined in: renderer/patterns/conical/Conical.ts:14
 
 #### Parameters
 
@@ -36,7 +36,7 @@ Defined in: [renderer/gradients/conical/Conical.ts:14](https://github.com/humanb
 
 #### Returns
 
-`P5AsciifyConicalGradient`
+`P5AsciifyConicalPattern`
 
 #### Overrides
 
@@ -46,9 +46,9 @@ Defined in: [renderer/gradients/conical/Conical.ts:14](https://github.com/humanb
 
 | Property | Modifier | Type | Defined in |
 | ------ | ------ | ------ | ------ |
-| <a id="centerx"></a> `centerX` | `public` | `number` | [renderer/gradients/conical/Conical.ts:10](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/conical/Conical.ts#L10) |
-| <a id="centery"></a> `centerY` | `public` | `number` | [renderer/gradients/conical/Conical.ts:11](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/conical/Conical.ts#L11) |
-| <a id="speed"></a> `speed` | `public` | `number` | [renderer/gradients/conical/Conical.ts:12](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/conical/Conical.ts#L12) |
+| <a id="centerx"></a> `centerX` | `public` | `number` | renderer/patterns/conical/Conical.ts:10 |
+| <a id="centery"></a> `centerY` | `public` | `number` | renderer/patterns/conical/Conical.ts:11 |
+| <a id="speed"></a> `speed` | `public` | `number` | renderer/patterns/conical/Conical.ts:12 |
 
 ## Accessors
 
@@ -58,7 +58,7 @@ Defined in: [renderer/gradients/conical/Conical.ts:14](https://github.com/humanb
 
 > **get** **palette**(): `P5AsciifyColorPalette`
 
-Defined in: [renderer/gradients/Gradient.ts:145](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/Gradient.ts#L145)
+Defined in: renderer/patterns/Pattern.ts:145
 
 ##### Returns
 
@@ -76,7 +76,7 @@ Defined in: [renderer/gradients/Gradient.ts:145](https://github.com/humanbydefin
 
 > **get** **shader**(): `Shader`
 
-Defined in: [renderer/gradients/Gradient.ts:144](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/Gradient.ts#L144)
+Defined in: renderer/patterns/Pattern.ts:144
 
 ##### Returns
 
@@ -92,7 +92,7 @@ Defined in: [renderer/gradients/Gradient.ts:144](https://github.com/humanbydefin
 
 > **brightnessEnd**(`value`): `void`
 
-Defined in: [renderer/gradients/Gradient.ts:78](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/Gradient.ts#L78)
+Defined in: renderer/patterns/Pattern.ts:78
 
 Sets the end brightness value.
 
@@ -120,7 +120,7 @@ P5AsciifyError If the value is not a number or is not within the range [0, 255].
 
 > **brightnessRange**(`start`, `end`): `void`
 
-Defined in: [renderer/gradients/Gradient.ts:89](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/Gradient.ts#L89)
+Defined in: renderer/patterns/Pattern.ts:89
 
 Sets the brightness range.
 
@@ -149,7 +149,7 @@ P5AsciifyError If the start or end value is not a number or is not within the ra
 
 > **brightnessStart**(`value`): `void`
 
-Defined in: [renderer/gradients/Gradient.ts:68](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/Gradient.ts#L68)
+Defined in: renderer/patterns/Pattern.ts:68
 
 Sets the start brightness value.
 
@@ -177,7 +177,7 @@ P5AsciifyError If the value is not a number or is not within the range [0, 255].
 
 > **characters**(`value`): `void`
 
-Defined in: [renderer/gradients/Gradient.ts:99](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/Gradient.ts#L99)
+Defined in: renderer/patterns/Pattern.ts:99
 
 Sets the characters to use for the gradient.
 
@@ -205,7 +205,7 @@ P5AsciifyError If the string does contain characters that are not available in t
 
 > **disable**(): `void`
 
-Defined in: [renderer/gradients/Gradient.ts:126](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/Gradient.ts#L126)
+Defined in: renderer/patterns/Pattern.ts:126
 
 Disables the gradient.
 
@@ -223,7 +223,7 @@ Disables the gradient.
 
 > **enable**(): `void`
 
-Defined in: [renderer/gradients/Gradient.ts:119](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/Gradient.ts#L119)
+Defined in: renderer/patterns/Pattern.ts:119
 
 Enables the gradient.
 
@@ -241,7 +241,7 @@ Enables the gradient.
 
 > **enabled**(`value`): `void`
 
-Defined in: [renderer/gradients/Gradient.ts:112](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/Gradient.ts#L112)
+Defined in: renderer/patterns/Pattern.ts:112
 
 Enables or disables the gradient.
 
@@ -265,7 +265,7 @@ Enables or disables the gradient.
 
 > **isEnabled**(): `boolean`
 
-Defined in: [renderer/gradients/Gradient.ts:139](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/Gradient.ts#L139)
+Defined in: renderer/patterns/Pattern.ts:139
 
 #### Returns
 
@@ -281,7 +281,7 @@ Defined in: [renderer/gradients/Gradient.ts:139](https://github.com/humanbydefin
 
 > **setUniforms**(`framebuffer`, `referenceFramebuffer`): `void`
 
-Defined in: [renderer/gradients/conical/Conical.ts:29](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/conical/Conical.ts#L29)
+Defined in: renderer/patterns/conical/Conical.ts:29
 
 Sets the uniforms for the gradient shader.
 
@@ -306,7 +306,7 @@ Sets the uniforms for the gradient shader.
 
 > **toggle**(): `void`
 
-Defined in: [renderer/gradients/Gradient.ts:133](https://github.com/humanbydefinition/p5.asciify-pattern-renderer-plugin/blob/78587b3ed9c9440a400d453e44e7d55e63d8c70c/src/plugin/renderer/gradients/Gradient.ts#L133)
+Defined in: renderer/patterns/Pattern.ts:133
 
 Toggles the enabled state of the gradient.
 

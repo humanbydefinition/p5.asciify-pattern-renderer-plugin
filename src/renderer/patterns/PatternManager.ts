@@ -1,23 +1,23 @@
 import p5 from 'p5';
-import { P5AsciifyLinearGradient } from "./linear/Linear";
-import { P5AsciifySpiralGradient } from "./spiral/Spiral";
-import { P5AsciifyRadialGradient } from "./radial/Radial";
-import { P5AsciifyConicalGradient } from "./conical/Conical";
-import { P5AsciifyGradient } from './Gradient';
+import { P5AsciifyLinearPattern } from "./linear/Linear";
+import { P5AsciifySpiralPattern } from "./spiral/Spiral";
+import { P5AsciifyRadialPattern } from "./radial/Radial";
+import { P5AsciifyConicalPattern } from "./conical/Conical";
+import { P5AsciifyPattern } from './Pattern';
 
 import { GradientParams, GradientType, GradientConstructorMap } from './types';
 
 import vertexShader from '../shaders/shader.vert';
-import linearGradientShader from "../gradients/linear/linear.frag";
-import spiralGradientShader from "../gradients/spiral/spiral.frag";
-import radialGradientShader from "../gradients/radial/radial.frag";
-import conicalGradientShader from "../gradients/conical/conical.frag";
+import linearGradientShader from "../patterns/linear/linear.frag";
+import spiralGradientShader from "../patterns/spiral/spiral.frag";
+import radialGradientShader from "../patterns/radial/radial.frag";
+import conicalGradientShader from "../patterns/conical/conical.frag";
 import { P5AsciifyError, P5AsciifyFontManager } from 'p5.asciify'
 
 /**
  * Manages the creation and removal of gradients for the gradient ascii renderer.
  */
-export class P5AsciifyGradientManager {
+export class P5AsciifyPatternManager {
 
     /** The default parameters for each gradient type. */
     private _gradientParams: GradientParams = {
@@ -41,17 +41,17 @@ export class P5AsciifyGradientManager {
     /** The gradient constructors. */
     private _gradientConstructors: GradientConstructorMap = {
         linear: (p, fontManager, shader, characters, brightnessStart, brightnessEnd, params) =>
-            new P5AsciifyLinearGradient(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
+            new P5AsciifyLinearPattern(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
         spiral: (p, fontManager, shader, characters, brightnessStart, brightnessEnd, params) =>
-            new P5AsciifySpiralGradient(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
+            new P5AsciifySpiralPattern(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
         radial: (p, fontManager, shader, characters, brightnessStart, brightnessEnd, params) =>
-            new P5AsciifyRadialGradient(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
+            new P5AsciifyRadialPattern(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
         conical: (p, fontManager, shader, characters, brightnessStart, brightnessEnd, params) =>
-            new P5AsciifyConicalGradient(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
+            new P5AsciifyConicalPattern(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
     };
 
     /** The list of gradients to render on the gradient ascii renderer. */
-    private _gradients: P5AsciifyGradient[] = [];
+    private _gradients: P5AsciifyPattern[] = [];
 
     constructor(
         /** The p5 instance. */
@@ -82,7 +82,7 @@ export class P5AsciifyGradientManager {
         brightnessStart: number,
         brightnessEnd: number,
         options: Partial<GradientParams[typeof gradientName]>
-    ): P5AsciifyGradient {
+    ): P5AsciifyPattern {
 
         // Validate gradient name type and existence
         if (typeof gradientName !== 'string') {
@@ -145,7 +145,7 @@ export class P5AsciifyGradientManager {
      * Remove a gradient from the gradient manager.
      * @param gradient The gradient to remove.
      */
-    remove(gradient: P5AsciifyGradient): void {
+    remove(gradient: P5AsciifyPattern): void {
         const index = this._gradients.indexOf(gradient);
         if (index > -1) {
             this._gradients.splice(index, 1);
@@ -154,6 +154,6 @@ export class P5AsciifyGradientManager {
 
     // Getters
     get gradientParams(): GradientParams { return this._gradientParams; }
-    get gradients(): P5AsciifyGradient[] { return this._gradients; }
+    get gradients(): P5AsciifyPattern[] { return this._gradients; }
     get gradientConstructors(): GradientConstructorMap { return this._gradientConstructors; }
 }

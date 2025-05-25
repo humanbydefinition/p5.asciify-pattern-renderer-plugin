@@ -11,7 +11,7 @@ if (typeof window !== 'undefined') {
   window.PatternRendererPlugin = PatternRendererPlugin;
 }
 
-export * from './renderer/gradients';
+export * as patterns from './renderer/patterns';
 
 export { P5AsciifyPatternRenderer } from './renderer/PatternAsciiRenderer';
 

@@ -1,5 +1,5 @@
 import p5 from 'p5';
-import { P5AsciifyGradient } from './Gradient';
+import { P5AsciifyPattern } from './Pattern';
 import { P5AsciifyFontManager } from 'p5.asciify';
 
 /** The available gradient types. */
@@ -15,7 +15,7 @@ export type GradientConstructorMap = Record<GradientType,
         brightnessStart: number,
         brightnessEnd: number,
         params: any
-    ) => P5AsciifyGradient
+    ) => P5AsciifyPattern
 >;
 
 /** The available gradient options for the `"conical"` gradient type. */
