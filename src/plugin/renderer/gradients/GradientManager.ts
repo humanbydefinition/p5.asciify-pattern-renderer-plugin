@@ -40,14 +40,14 @@ export class P5AsciifyGradientManager {
 
     /** The gradient constructors. */
     private _gradientConstructors: GradientConstructorMap = {
-        linear: (p, fontTextureAtlas, shader, characters, brightnessStart, brightnessEnd, params) =>
-            new P5AsciifyLinearGradient(p, fontTextureAtlas, shader, characters, brightnessStart, brightnessEnd, params),
-        spiral: (p, fontTextureAtlas, shader, characters, brightnessStart, brightnessEnd, params) =>
-            new P5AsciifySpiralGradient(p, fontTextureAtlas, shader, characters, brightnessStart, brightnessEnd, params),
-        radial: (p, fontTextureAtlas, shader, characters, brightnessStart, brightnessEnd, params) =>
-            new P5AsciifyRadialGradient(p, fontTextureAtlas, shader, characters, brightnessStart, brightnessEnd, params),
-        conical: (p, fontTextureAtlas, shader, characters, brightnessStart, brightnessEnd, params) =>
-            new P5AsciifyConicalGradient(p, fontTextureAtlas, shader, characters, brightnessStart, brightnessEnd, params),
+        linear: (p, fontManager, shader, characters, brightnessStart, brightnessEnd, params) =>
+            new P5AsciifyLinearGradient(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
+        spiral: (p, fontManager, shader, characters, brightnessStart, brightnessEnd, params) =>
+            new P5AsciifySpiralGradient(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
+        radial: (p, fontManager, shader, characters, brightnessStart, brightnessEnd, params) =>
+            new P5AsciifyRadialGradient(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
+        conical: (p, fontManager, shader, characters, brightnessStart, brightnessEnd, params) =>
+            new P5AsciifyConicalGradient(p, fontManager, shader, characters, brightnessStart, brightnessEnd, params),
     };
 
     /** The list of gradients to render on the gradient ascii renderer. */

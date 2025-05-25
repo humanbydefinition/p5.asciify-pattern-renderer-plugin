@@ -1,6 +1,6 @@
 import p5 from 'p5';
 import { P5AsciifyGradient } from './Gradient';
-import { P5AsciifyFontTextureAtlas } from '../FontTextureAtlas';
+import { P5AsciifyFontManager } from 'p5.asciify';
 
 /** The available gradient types. */
 export type GradientType = 'linear' | 'spiral' | 'radial' | 'conical';
@@ -9,7 +9,7 @@ export type GradientType = 'linear' | 'spiral' | 'radial' | 'conical';
 export type GradientConstructorMap = Record<GradientType,
     (
         p: p5,
-        fontTextureAtlas: P5AsciifyFontTextureAtlas,
+        fontManager: P5AsciifyFontManager,
         shader: p5.Shader,
         characters: string,
         brightnessStart: number,

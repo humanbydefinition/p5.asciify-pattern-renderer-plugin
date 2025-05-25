@@ -1,6 +1,6 @@
 import p5 from 'p5';
 import { P5AsciifyGradient } from '../Gradient';
-import { P5AsciifyFontTextureAtlas } from '../../FontTextureAtlas';
+import { P5AsciifyFontManager } from 'p5.asciify';
 import { RadialGradientParams } from '../types';
 
 /**
@@ -14,7 +14,7 @@ export class P5AsciifyRadialGradient extends P5AsciifyGradient {
 
     constructor(
             protected p: p5,
-            protected _fontManager: P5AsciifyFontTextureAtlas,
+            protected _fontManager: P5AsciifyFontManager,
             protected _shader: p5.Shader,
             protected _characters: string,
             brightnessStart: number,
