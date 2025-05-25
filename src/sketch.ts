@@ -2,10 +2,16 @@ import p5 from 'p5';
 import { p5asciify } from 'p5.asciify';
 
 import { PatternRendererPlugin } from './plugin/PatternRendererPlugin';
+import { P5AsciifyPatternRenderer } from './plugin/renderer/PatternAsciiRenderer';
+import { P5AsciifyBrightnessRenderer } from 'p5.asciify/dist/types/renderers/2d/feature';
+import { renderers } from 'p5.asciify';
 
 const sketch = new p5((p) => {
 
-    let patternRenderer;
+    let brightnessRenderer: renderers.renderer2d.feature.P5AsciifyBrightnessRenderer;
+    let patternRenderer: P5AsciifyPatternRenderer;
+
+    let linearPattern;
 
     p.setup = () => {
         p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
@@ -14,12 +20,14 @@ const sketch = new p5((p) => {
     };
 
     p.setupAsciify = () => {
-        p5asciify.asciifier().renderers().get("brightness").update({
+
+        brightnessRenderer = p5asciify.asciifier().renderers().get("brightness") as P5AsciifyBrightnessRenderer;
+        brightnessRenderer.update({
             enabled: false,
             brightnessRange: [0, 255],
         });
 
-        patternRenderer = p5asciify.asciifier().renderers().add("pattern", "pattern", { enabled: true });
+        patternRenderer = p5asciify.asciifier().renderers().add("pattern", "pattern", { enabled: true }) as P5AsciifyPatternRenderer;
 
         patternRenderer.add("linear", 0, 255, " .:-=+*%@#", {
             direction: 1,
