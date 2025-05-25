@@ -1,28 +1,24 @@
 import p5 from 'p5';
-import { p5asciify } from 'p5.asciify';
+import { p5asciify, renderers } from 'p5.asciify';
 
-import { PatternRendererPlugin } from './plugin/PatternRendererPlugin';
-import { P5AsciifyPatternRenderer } from './plugin/renderer/PatternAsciiRenderer';
-import { P5AsciifyBrightnessRenderer } from 'p5.asciify/dist/types/renderers/2d/feature';
-import { renderers } from 'p5.asciify';
+import { PatternRendererPlugin } from '../plugin/PatternRendererPlugin';
+import { P5AsciifyConicalGradient, P5AsciifyLinearGradient, P5AsciifyRadialGradient, P5AsciifySpiralGradient } from '../plugin/renderer/gradients';
+import { P5AsciifyPatternRenderer } from '../plugin/renderer/PatternAsciiRenderer';
 
 const sketch = new p5((p) => {
 
-<<<<<<< HEAD:src/sketch.js
     let asciifier;
 
+    let brightnessRenderer;
     let patternRenderer;
-=======
-    let brightnessRenderer: renderers.renderer2d.feature.P5AsciifyBrightnessRenderer;
-    let patternRenderer: P5AsciifyPatternRenderer;
 
-    let linearPattern;
->>>>>>> 7e65950811656edcaf346282f79f74110b10e362:src/sketch.ts
+    let linearGradient: P5AsciifyLinearGradient;
+    let spiralGradient: P5AsciifySpiralGradient;
+    let radialGradient: P5AsciifyRadialGradient;
+    let zigzagGradient: P5AsciifyLinearGradient;
+    let conicalGradient: P5AsciifyConicalGradient;
 
-    let linearGradient, spiralGradient, radialGradient,
-        zigzagGradient, conicalGradient;
-
-        let gridRows = 3;
+    let gridRows = 3;
     let gridCols = 3;
     let fillColors = [
         [150, 160, 170],
@@ -30,7 +26,7 @@ const sketch = new p5((p) => {
         [210, 220, 230],
     ];
 
-    const getFillColor = (row, col) => {
+    const getFillColor = (row: number, col: number) => {
         return fillColors[row][col];
     };
 
@@ -42,53 +38,46 @@ const sketch = new p5((p) => {
 
     p.setupAsciify = () => {
 
-<<<<<<< HEAD:src/sketch.js
         asciifier = p5asciify.asciifier();
         asciifier.backgroundMode("sampled");
 
-        asciifier.renderers().get("brightness").update({
-            enabled: true,
-=======
-        brightnessRenderer = p5asciify.asciifier().renderers().get("brightness") as P5AsciifyBrightnessRenderer;
+        brightnessRenderer = asciifier.renderers().get("brightness") as renderers.renderer2d.feature.P5AsciifyBrightnessRenderer;
+
         brightnessRenderer.update({
-            enabled: false,
->>>>>>> 7e65950811656edcaf346282f79f74110b10e362:src/sketch.ts
+            enabled: true,
             brightnessRange: [0, 255],
             characters: ".",
         });
 
-<<<<<<< HEAD:src/sketch.js
-        patternRenderer = asciifier.renderers().add("pattern", "pattern", { enabled: true });
-=======
-        patternRenderer = p5asciify.asciifier().renderers().add("pattern", "pattern", { enabled: true }) as P5AsciifyPatternRenderer;
->>>>>>> 7e65950811656edcaf346282f79f74110b10e362:src/sketch.ts
+        patternRenderer = asciifier.renderers().add("pattern", "pattern", { enabled: true }) as P5AsciifyPatternRenderer;
 
         linearGradient = patternRenderer.add("linear", 150, 150, "patterns ", {
             direction: 1,
             angle: 0,
             speed: 0.1,
-        });
-        
+            zigzag: false,
+        }) as P5AsciifyLinearGradient;
+
         spiralGradient = patternRenderer.add("spiral", 160, 160, "now  ", {
             direction: 1,
             speed: 0.01,
             density: 0.5,
-        });
+        }) as P5AsciifySpiralGradient;
 
         radialGradient = patternRenderer.add("radial", 170, 170, "available ", {
             direction: -1,
             radius: 1.0,
-        });
+        }) as P5AsciifyRadialGradient;
 
         zigzagGradient = patternRenderer.add("linear", 180, 180, "in ", {
             direction: 1,
             speed: 0.2,
             zigzag: true,
-        });
+        }) as P5AsciifyLinearGradient;
 
         conicalGradient = patternRenderer.add("conical", 190, 190, "p5.asciify ", {
             speed: 0.01,
-        });
+        }) as P5AsciifyConicalGradient;
 
         console.log(p5asciify.asciifier().renderers().getAvailableRendererTypes());
     };
@@ -114,11 +103,7 @@ const sketch = new p5((p) => {
         }
 
         if (p.frameCount % 60 == 0) {
-            zigzagGradient.enabled = !zigzagGradient.enabled;
-        }
-
-        if (p.frameCount === 120) {
-            radialGradient.characters = "finally ";
+            zigzagGradient.toggle();
         }
 
         linearGradient.angle += 0.5;
