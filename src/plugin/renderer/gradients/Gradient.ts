@@ -127,8 +127,20 @@ export abstract class P5AsciifyGradient {
         this.enabled(false);
     }
 
+    /**
+     * Toggles the enabled state of the gradient.
+     */
+    public toggle() {
+        
+        this.enabled(!this._enabled);
+
+    }
+
+    public isEnabled(): boolean {
+        return this._enabled;
+    }
+
     // Getters
     get shader(): p5.Shader { return this._shader; }
     get palette(): P5AsciifyColorPalette { return this._palette; }
-    get isEnabled(): boolean { return this._enabled; }
 }
