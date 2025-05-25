@@ -1,9 +1,9 @@
 import p5 from 'p5';
 import { p5asciify, renderers } from 'p5.asciify';
 
-import { PatternRendererPlugin } from '../plugin/PatternRendererPlugin';
-import { P5AsciifyConicalGradient, P5AsciifyLinearGradient, P5AsciifyRadialGradient, P5AsciifySpiralGradient } from '../plugin/renderer/gradients';
-import { P5AsciifyPatternRenderer } from '../plugin/renderer/PatternAsciiRenderer';
+import { PatternRendererPlugin } from '../src/plugin/PatternRendererPlugin';
+import { P5AsciifyConicalGradient, P5AsciifyLinearGradient, P5AsciifyRadialGradient, P5AsciifySpiralGradient } from '../src/plugin/renderer/gradients';
+import { P5AsciifyPatternRenderer } from '../src/plugin/renderer/PatternAsciiRenderer';
 
 const sketch = new p5((p) => {
 
